@@ -1066,7 +1066,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidad: 0
   direccionHorizontal: 0
-  rigidbody: {fileID: 0}
+  rigidbody: {fileID: 667389779}
 --- !u!136 &667389781
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1155,7 +1155,7 @@ WheelCollider:
   m_Radius: 0.5
   m_SuspensionSpring:
     spring: 12
-    damper: 4500
+    damper: 15
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
