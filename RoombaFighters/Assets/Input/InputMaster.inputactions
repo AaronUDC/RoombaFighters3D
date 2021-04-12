@@ -206,6 +206,17 @@
                 },
                 {
                     "name": "",
+                    "id": "e4ee0549-535b-449b-b350-5491fbc78b7c",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Teclado y raton",
+                    "action": "ControlCamara",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "3bed01eb-ee94-4772-af45-3050ed10ec0e",
                     "path": "",
                     "interactions": "",
