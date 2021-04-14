@@ -6,8 +6,10 @@ using UnityEngine.InputSystem;
 
 public class ThirdPersonController : MonoBehaviour
 {
+    
     public float fuerza;
-
+    public float fuerzaDash;
+    [Space(10)]
     public float velocidadGiro;
     private float tiempoGiro = 0.1f;
     
@@ -26,6 +28,8 @@ public class ThirdPersonController : MonoBehaviour
     public GameObject cinemachine;
  
     private CinemachineFreeLook freeLook;
+
+    public GameObject posicionArmas;
     void Awake(){
     }
     public void OnMovimiento(InputValue context){
@@ -37,13 +41,26 @@ public class ThirdPersonController : MonoBehaviour
         freeLook.m_YAxis.m_InputAxisValue = -context.Get<Vector2>().y;
     }
 
+    public void OnDash(){
+        rb.AddForce(transform.forward * fuerzaDash, ForceMode.Impulse);
+    }
+
+    public void OnAtaque(){
+
+
+    }
+
  
     void Start()
     {
         freeLook = cinemachine.GetComponent<CinemachineFreeLook>();
     }
 
-    // Update is called once per frame
+    public void ObtenerArma(GameObject arma){
+        GameObject clon = Instantiate(arma, posicionArmas.transform.position , transform.rotation);
+        clon.transform.SetParent(posicionArmas.transform);
+    }
+    
     void FixedUpdate()
     {
         Vector3 direction = new Vector3(movimiento.x,0,movimiento.y).normalized;
@@ -57,5 +74,6 @@ public class ThirdPersonController : MonoBehaviour
             Vector3 moveDir = Quaternion.Euler(0f,anguloObjetivo,0f) * Vector3.forward;
             rb.AddForce(moveDir.normalized * fuerza * Time.fixedDeltaTime, ForceMode.Force);
         }
+
     }
 }
