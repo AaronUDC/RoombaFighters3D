@@ -231,10 +231,10 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""3bed01eb-ee94-4772-af45-3050ed10ec0e"",
-                    ""path"": """",
+                    ""path"": ""<Gamepad>/leftShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Mando"",
                     ""action"": ""Atacar"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -242,10 +242,10 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""ec387d71-e2b7-4c37-bdb9-f510ed880606"",
-                    ""path"": """",
+                    ""path"": ""<Gamepad>/rightShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Mando"",
                     ""action"": ""Dash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
