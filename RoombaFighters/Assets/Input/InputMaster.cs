@@ -19,18 +19,18 @@ public class @InputMaster : IInputActionCollection, IDisposable
             ""id"": ""c8806e1a-b794-42c4-9541-edacf707e7f8"",
             ""actions"": [
                 {
-                    ""name"": ""Movimiento"",
+                    ""name"": ""Girar"",
                     ""type"": ""Value"",
                     ""id"": ""7fbe0386-df25-48af-ad13-91d87c9234c6"",
-                    ""expectedControlType"": ""Vector2"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""ControlCamara"",
+                    ""name"": ""Acelerar"",
                     ""type"": ""Value"",
-                    ""id"": ""31204ce9-8537-4cba-87cb-2d17c50e701f"",
-                    ""expectedControlType"": ""Vector2"",
+                    ""id"": ""9bc58c12-076f-4c25-9570-26142312ef26"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
                 },
@@ -53,180 +53,70 @@ public class @InputMaster : IInputActionCollection, IDisposable
             ],
             ""bindings"": [
                 {
-                    ""name"": ""2D Vector"",
-                    ""id"": ""aa024256-2938-49f6-9a1e-9b60b295e0c7"",
-                    ""path"": ""2DVector(mode=2)"",
+                    ""name"": ""1D Axis"",
+                    ""id"": ""f40229d7-40e1-4918-b2ab-11f7d23151b4"",
+                    ""path"": ""1DAxis"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Movimiento"",
+                    ""action"": ""Girar"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""up"",
-                    ""id"": ""179136b6-7702-48ce-8536-aa727c47ae57"",
-                    ""path"": ""<Gamepad>/leftStick/up"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Mando"",
-                    ""action"": ""Movimiento"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""4c81b844-996b-4388-936c-43412a1099c5"",
-                    ""path"": ""<Gamepad>/leftStick/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Mando"",
-                    ""action"": ""Movimiento"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""760c48f0-9dfc-4b63-ba42-b311925d6f15"",
-                    ""path"": ""<Gamepad>/leftStick/left"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Mando"",
-                    ""action"": ""Movimiento"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""f011fa65-429e-49c2-88ee-a058df5c3298"",
-                    ""path"": ""<Gamepad>/leftStick/right"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Mando"",
-                    ""action"": ""Movimiento"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""2D Vector"",
-                    ""id"": ""b7440a59-5d57-4c0e-a6fd-d94b336429e7"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movimiento"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""ea5d192f-bf25-457c-a6f5-0b45eb2dae34"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Teclado y raton"",
-                    ""action"": ""Movimiento"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""d5764d76-eac1-4788-a594-83b7e38fa8ee"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Teclado y raton"",
-                    ""action"": ""Movimiento"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""5e4a1e92-24b8-4433-abce-3a3ee7d85b81"",
+                    ""name"": ""negative"",
+                    ""id"": ""03d1b64b-5a7d-40e3-9605-1301cc2a4773"",
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Teclado y raton"",
-                    ""action"": ""Movimiento"",
+                    ""action"": ""Girar"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""right"",
-                    ""id"": ""e0165a07-fa82-4bdf-a059-3ddbbb86173a"",
+                    ""name"": ""positive"",
+                    ""id"": ""6d5738db-5afc-4c4c-87dd-5aa4a9dc926b"",
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Teclado y raton"",
-                    ""action"": ""Movimiento"",
+                    ""action"": ""Girar"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""2D Vector"",
-                    ""id"": ""a6bbbb47-2722-4626-a924-613e173b843b"",
-                    ""path"": ""2DVector(mode=2)"",
+                    ""name"": ""1D Axis"",
+                    ""id"": ""1f0a4685-678b-488e-91fd-5c59adf6c288"",
+                    ""path"": ""1DAxis"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""ControlCamara"",
+                    ""action"": ""Girar"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""up"",
-                    ""id"": ""095421ea-4e97-4881-aabe-ebd2ff203b1b"",
-                    ""path"": ""<Gamepad>/rightStick/up"",
+                    ""name"": ""negative"",
+                    ""id"": ""ac4cf5c8-224d-4e4b-ad34-74db12c58432"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Mando"",
-                    ""action"": ""ControlCamara"",
+                    ""action"": ""Girar"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""down"",
-                    ""id"": ""10953d07-2fa9-4e7d-8f2b-b18dfe8f0962"",
-                    ""path"": ""<Gamepad>/rightStick/down"",
+                    ""name"": ""positive"",
+                    ""id"": ""a68855f0-3e04-45ae-baa3-645398acb898"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Mando"",
-                    ""action"": ""ControlCamara"",
+                    ""action"": ""Girar"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""85aa8d3b-a147-4e7d-87ef-510161cfa3b0"",
-                    ""path"": ""<Gamepad>/rightStick/left"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Mando"",
-                    ""action"": ""ControlCamara"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""3883b196-ddb2-4d29-ba66-7e69d541d21a"",
-                    ""path"": ""<Gamepad>/rightStick/right"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Mando"",
-                    ""action"": ""ControlCamara"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""e4ee0549-535b-449b-b350-5491fbc78b7c"",
-                    ""path"": ""<Mouse>/delta"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Teclado y raton"",
-                    ""action"": ""ControlCamara"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -241,6 +131,17 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""50bec631-d225-4a4a-8179-7b6df4bc69ee"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Teclado y raton"",
+                    ""action"": ""Atacar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""ec387d71-e2b7-4c37-bdb9-f510ed880606"",
                     ""path"": ""<Gamepad>/rightShoulder"",
                     ""interactions"": """",
@@ -249,6 +150,83 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""action"": ""Dash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""19fd0e5d-1dd7-47cb-a1a4-c2a139b901e6"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Teclado y raton"",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""791d1afc-817f-4931-9580-d65bcdcd2de1"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Acelerar"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""4095a84f-3c2e-484f-92a7-25072a92181e"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Teclado y raton"",
+                    ""action"": ""Acelerar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""94c93343-cd36-47f6-bd1f-535260441616"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Teclado y raton"",
+                    ""action"": ""Acelerar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""5ac040ce-f393-470c-961e-a3549f1fae8e"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Acelerar"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""bf5eed17-c727-445c-98d9-129f9045331b"",
+                    ""path"": ""<Gamepad>/rightStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mando"",
+                    ""action"": ""Acelerar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""cbeeec60-54de-43e1-a17b-a804439426e9"",
+                    ""path"": ""<Gamepad>/rightStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mando"",
+                    ""action"": ""Acelerar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -285,8 +263,8 @@ public class @InputMaster : IInputActionCollection, IDisposable
 }");
         // Jugador
         m_Jugador = asset.FindActionMap("Jugador", throwIfNotFound: true);
-        m_Jugador_Movimiento = m_Jugador.FindAction("Movimiento", throwIfNotFound: true);
-        m_Jugador_ControlCamara = m_Jugador.FindAction("ControlCamara", throwIfNotFound: true);
+        m_Jugador_Girar = m_Jugador.FindAction("Girar", throwIfNotFound: true);
+        m_Jugador_Acelerar = m_Jugador.FindAction("Acelerar", throwIfNotFound: true);
         m_Jugador_Atacar = m_Jugador.FindAction("Atacar", throwIfNotFound: true);
         m_Jugador_Dash = m_Jugador.FindAction("Dash", throwIfNotFound: true);
     }
@@ -338,16 +316,16 @@ public class @InputMaster : IInputActionCollection, IDisposable
     // Jugador
     private readonly InputActionMap m_Jugador;
     private IJugadorActions m_JugadorActionsCallbackInterface;
-    private readonly InputAction m_Jugador_Movimiento;
-    private readonly InputAction m_Jugador_ControlCamara;
+    private readonly InputAction m_Jugador_Girar;
+    private readonly InputAction m_Jugador_Acelerar;
     private readonly InputAction m_Jugador_Atacar;
     private readonly InputAction m_Jugador_Dash;
     public struct JugadorActions
     {
         private @InputMaster m_Wrapper;
         public JugadorActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Movimiento => m_Wrapper.m_Jugador_Movimiento;
-        public InputAction @ControlCamara => m_Wrapper.m_Jugador_ControlCamara;
+        public InputAction @Girar => m_Wrapper.m_Jugador_Girar;
+        public InputAction @Acelerar => m_Wrapper.m_Jugador_Acelerar;
         public InputAction @Atacar => m_Wrapper.m_Jugador_Atacar;
         public InputAction @Dash => m_Wrapper.m_Jugador_Dash;
         public InputActionMap Get() { return m_Wrapper.m_Jugador; }
@@ -359,12 +337,12 @@ public class @InputMaster : IInputActionCollection, IDisposable
         {
             if (m_Wrapper.m_JugadorActionsCallbackInterface != null)
             {
-                @Movimiento.started -= m_Wrapper.m_JugadorActionsCallbackInterface.OnMovimiento;
-                @Movimiento.performed -= m_Wrapper.m_JugadorActionsCallbackInterface.OnMovimiento;
-                @Movimiento.canceled -= m_Wrapper.m_JugadorActionsCallbackInterface.OnMovimiento;
-                @ControlCamara.started -= m_Wrapper.m_JugadorActionsCallbackInterface.OnControlCamara;
-                @ControlCamara.performed -= m_Wrapper.m_JugadorActionsCallbackInterface.OnControlCamara;
-                @ControlCamara.canceled -= m_Wrapper.m_JugadorActionsCallbackInterface.OnControlCamara;
+                @Girar.started -= m_Wrapper.m_JugadorActionsCallbackInterface.OnGirar;
+                @Girar.performed -= m_Wrapper.m_JugadorActionsCallbackInterface.OnGirar;
+                @Girar.canceled -= m_Wrapper.m_JugadorActionsCallbackInterface.OnGirar;
+                @Acelerar.started -= m_Wrapper.m_JugadorActionsCallbackInterface.OnAcelerar;
+                @Acelerar.performed -= m_Wrapper.m_JugadorActionsCallbackInterface.OnAcelerar;
+                @Acelerar.canceled -= m_Wrapper.m_JugadorActionsCallbackInterface.OnAcelerar;
                 @Atacar.started -= m_Wrapper.m_JugadorActionsCallbackInterface.OnAtacar;
                 @Atacar.performed -= m_Wrapper.m_JugadorActionsCallbackInterface.OnAtacar;
                 @Atacar.canceled -= m_Wrapper.m_JugadorActionsCallbackInterface.OnAtacar;
@@ -375,12 +353,12 @@ public class @InputMaster : IInputActionCollection, IDisposable
             m_Wrapper.m_JugadorActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Movimiento.started += instance.OnMovimiento;
-                @Movimiento.performed += instance.OnMovimiento;
-                @Movimiento.canceled += instance.OnMovimiento;
-                @ControlCamara.started += instance.OnControlCamara;
-                @ControlCamara.performed += instance.OnControlCamara;
-                @ControlCamara.canceled += instance.OnControlCamara;
+                @Girar.started += instance.OnGirar;
+                @Girar.performed += instance.OnGirar;
+                @Girar.canceled += instance.OnGirar;
+                @Acelerar.started += instance.OnAcelerar;
+                @Acelerar.performed += instance.OnAcelerar;
+                @Acelerar.canceled += instance.OnAcelerar;
                 @Atacar.started += instance.OnAtacar;
                 @Atacar.performed += instance.OnAtacar;
                 @Atacar.canceled += instance.OnAtacar;
@@ -411,8 +389,8 @@ public class @InputMaster : IInputActionCollection, IDisposable
     }
     public interface IJugadorActions
     {
-        void OnMovimiento(InputAction.CallbackContext context);
-        void OnControlCamara(InputAction.CallbackContext context);
+        void OnGirar(InputAction.CallbackContext context);
+        void OnAcelerar(InputAction.CallbackContext context);
         void OnAtacar(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
     }
