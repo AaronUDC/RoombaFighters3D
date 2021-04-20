@@ -7,15 +7,21 @@ using UnityEngine.InputSystem;
 public class ThirdPersonController : MonoBehaviour
 {
     
-    public float fuerza;
+    public float aceleracion;
+
+    public float maxVel;
+    public float velocidadActual;
+    public float velocidadGiro;
+    public float maxTorque;
     public float fuerzaDash;
     [Space(10)]
-    public float velocidadGiro;
-    private float tiempoGiro = 0.1f;
     
-    [SerializeField] private Vector2 movimiento;
+    //private float tiempoGiro = 0.1f;
+    
+    [SerializeField] private float vert;
+    [SerializeField] private float horiz;
 
-    [SerializeField] private Vector2 camGiro;
+    //[SerializeField] private Vector2 camGiro;
 
     public Gamepad gamepad = Gamepad.current;
 
@@ -30,16 +36,19 @@ public class ThirdPersonController : MonoBehaviour
     private CinemachineFreeLook freeLook;
 
     public GameObject posicionArmas;
-    void Awake(){
-    }
-    public void OnMovimiento(InputValue context){
-        movimiento = context.Get<Vector2>();
+
+    public void OnAcelerar(InputValue context){
+        vert = context.Get<float>();
     }
 
-    public void OnControlCamara(InputValue context){
-        freeLook.m_XAxis.m_InputAxisValue = -context.Get<Vector2>().x;
-        freeLook.m_YAxis.m_InputAxisValue = -context.Get<Vector2>().y;
+    public void OnGirar(InputValue context){
+        horiz = context.Get<float>();
     }
+
+    /*public void OnControlCamara(InputValue context){
+        //freeLook.m_XAxis.m_InputAxisValue = -context.Get<Vector2>().x;
+        //freeLook.m_YAxis.m_InputAxisValue = -context.Get<Vector2>().y;
+    }*/
 
     public void OnDash(){
         rb.AddForce(transform.forward * fuerzaDash, ForceMode.Impulse);
@@ -54,6 +63,9 @@ public class ThirdPersonController : MonoBehaviour
     void Start()
     {
         freeLook = cinemachine.GetComponent<CinemachineFreeLook>();
+
+        
+        
     }
 
     public void ObtenerArma(GameObject arma){
@@ -63,8 +75,9 @@ public class ThirdPersonController : MonoBehaviour
     
     void FixedUpdate()
     {
-        Vector3 direction = new Vector3(movimiento.x,0,movimiento.y).normalized;
-        if (direction.magnitude > 0.1f){
+        Girar();
+        Acelerar();
+        /*if (horiz > 0.1f || vert > 0.1f){
             float anguloObjetivo = Mathf.Atan2(direction.x,direction.z) * Mathf.Rad2Deg + cam.transform.eulerAngles.y;
 
             float angulo = Mathf.SmoothDampAngle(transform.eulerAngles.y, anguloObjetivo,ref velocidadGiro, tiempoGiro);
@@ -73,7 +86,27 @@ public class ThirdPersonController : MonoBehaviour
             
             Vector3 moveDir = Quaternion.Euler(0f,anguloObjetivo,0f) * Vector3.forward;
             rb.AddForce(moveDir.normalized * fuerza * Time.fixedDeltaTime, ForceMode.Force);
-        }
+
+        }*/
 
     }
+
+    void Update(){
+        
+    }
+    void Girar(){
+        rb.maxAngularVelocity = maxTorque;
+        if(Mathf.Abs(horiz) > 0.1){
+            //transform.Rotate(new Vector3(0,1,0), velocidadGiro  * horiz * Time.fixedDeltaTime);
+            rb.AddTorque(transform.up * velocidadGiro  * horiz * Time.fixedDeltaTime);
+        }
+    }
+    void Acelerar(){
+
+        if(rb.velocity.magnitude < maxVel && Mathf.Abs(vert) > 0.1f)
+            rb.AddForce(transform.forward * aceleracion * vert * Time.fixedDeltaTime);
+            
+        velocidadActual = rb.velocity.magnitude;
+    }
+
 }
