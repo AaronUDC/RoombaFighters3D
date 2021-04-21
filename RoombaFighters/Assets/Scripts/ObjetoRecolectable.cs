@@ -4,14 +4,26 @@ using UnityEngine;
 
 public class ObjetoRecolectable : MonoBehaviour
 {
-    
+    public Puntuacion puntuacion;
     public GameObject[] armas;
-    private void OnTriggerEnter(Collider col){
-        if(col.tag == "Player"){
-            col.GetComponent<ThirdPersonController>().ObtenerArma(armas[0]);
-
-        }
         
+    void Start()
+	{
+		puntuacion = GameObject.FindGameObjectWithTag("Player").GetComponent<Puntuacion>();
+	}
+    
+    private void OnTriggerEnter(Collider col){
+    	if (this.tag == "Weapon")
+    	{
+        	if(col.tag == "Player"){
+            	col.GetComponent<ThirdPersonController>().ObtenerArma(armas[0]);
+
+        	}
+    	} else
+		{
+			puntuacion.Valor = puntuacion.Valor + 1;
+			Destroy(gameObject);
+		}
         
     }
 
