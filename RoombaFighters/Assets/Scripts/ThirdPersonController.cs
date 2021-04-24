@@ -35,7 +35,7 @@ public class ThirdPersonController : MonoBehaviour
  
     private CinemachineFreeLook freeLook;
 
-    public GameObject posicionArmas;
+    public GameObject arma;
 
     public void OnAcelerar(InputValue context){
         vert = context.Get<float>();
@@ -54,9 +54,11 @@ public class ThirdPersonController : MonoBehaviour
         rb.AddForce(transform.forward * fuerzaDash, ForceMode.Impulse);
     }
 
-    public void OnAtaque(){
+    public void OnAtacar(){
 
-
+        if(arma != null){
+            arma.GetComponent<Arma>().Atacar();
+        }
     }
 
  
@@ -69,8 +71,8 @@ public class ThirdPersonController : MonoBehaviour
     }
 
     public void ObtenerArma(GameObject arma){
-        GameObject clon = Instantiate(arma, posicionArmas.transform.position , transform.rotation);
-        clon.transform.SetParent(posicionArmas.transform);
+        this.arma = Instantiate(arma, transform.position, transform.rotation);
+        this.arma.transform.SetParent(gameObject.transform);
     }
     
     void FixedUpdate()
