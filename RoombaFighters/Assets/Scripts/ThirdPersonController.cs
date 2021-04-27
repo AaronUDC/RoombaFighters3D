@@ -9,11 +9,13 @@ public class ThirdPersonController : MonoBehaviour
     
     public float aceleracion;
 
+    public float duration = 0;
     public float maxVel;
     public float velocidadActual;
     public float velocidadGiro;
     public float maxTorque;
     public float fuerzaDash;
+    public bool powerUp;
     [Space(10)]
     
     //private float tiempoGiro = 0.1f;
@@ -103,8 +105,18 @@ public class ThirdPersonController : MonoBehaviour
     }
     void Acelerar(){
 
-        if(rb.velocity.magnitude < maxVel && Mathf.Abs(vert) > 0.1f)
+		if (powerUp){
+			duration = duration + Time.deltaTime;
+			if (duration >= 10) {
+				duration = 0;
+				powerUp = false;
+			}
+		
+		}
+        if(rb.velocity.magnitude < maxVel && Mathf.Abs(vert) > 0.1f && !powerUp)
             rb.AddForce(transform.forward * aceleracion * vert * Time.fixedDeltaTime);
+        else if (rb.velocity.magnitude < maxVel && Mathf.Abs(vert) > 0.1f && powerUp)
+            rb.AddForce(transform.forward * aceleracion * vert * Time.fixedDeltaTime * 2);
             
         velocidadActual = rb.velocity.magnitude;
     }

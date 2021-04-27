@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ManipuladorVida : MonoBehaviour
 {
     Vida playerVida;
+    Escudo escudo;
 
     public int cantidad;
     public float damageTime;
@@ -18,6 +19,7 @@ public class ManipuladorVida : MonoBehaviour
     void Start()
     {
         playerVida = GameObject.FindWithTag("Player").GetComponent<Vida>();
+        escudo = GameObject.FindWithTag("Player").GetComponent<Escudo>();
     }
 
     private void OnTriggerStay(Collider other)
@@ -25,7 +27,7 @@ public class ManipuladorVida : MonoBehaviour
 	if (other.tag == "Player")
 	{
 	    currentDamageTime += Time.deltaTime;
-	    if (currentDamageTime > damageTime && !invencible)
+	    if (currentDamageTime > damageTime && !escudo.Invencible)
 	    {
 	    aux = playerVida.vida;
 		playerVida.vida += cantidad;
@@ -36,7 +38,10 @@ public class ManipuladorVida : MonoBehaviour
 		}
 		currentDamageTime = 0.0f;
 		StartCoroutine(Invulnerabilidad());
-	    }
+	    } else if (currentDamageTime > damageTime && escudo.Invencible){
+			escudo.Invencible = false;
+			StartCoroutine(Invulnerabilidad());
+		}
 	}
     }
 
