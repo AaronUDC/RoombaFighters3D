@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Trash : MonoBehaviour
 {
-    public float trashSize = 10;
+    public int trashSize = 10;
 
     private float logSize;
     public float lifeTime = 30;
@@ -13,25 +13,19 @@ public class Trash : MonoBehaviour
     void Start()
     {      
         //Randomizar los tamaños y tiempos de desaparición
-        trashSize = Random.Range(6,20);
-
         lifeTime = Random.Range(20,40);
 
-        logSize = Mathf.Log(trashSize, 10);
         Resize();
         Destroy(gameObject, lifeTime);
     }
 
     public void Resize(){
+        logSize = Mathf.Log10(1+ trashSize);
         gameObject.transform.localScale = new Vector3(logSize, logSize, logSize);
     }
 
-    void Update(){
-        logSize = Mathf.Log10(trashSize);
-        Resize();
-    }
 
-    void OnCollisionEnter(Collision col){
+    void OnTriggerEnter(Collider col){
         if(col.gameObject.tag == "Player"){
             //Debug.Log("ÑAM");
             col.gameObject.GetComponent<TrashContainer>().AddTrash(trashSize);
