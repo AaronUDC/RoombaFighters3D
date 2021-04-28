@@ -9,7 +9,8 @@ public class ObjetoRecolectable : MonoBehaviour
 
     private void OnTriggerEnter(Collider col){
 		if(col.tag == "Player"){
-			col.GetComponent<ThirdPersonController>().ObtenerArma(armas[0]);
+            int arma = Random.Range(0, armas.Length - 1);
+			col.GetComponent<ThirdPersonController>().ObtenerArma(armas[1]);
 		}
     }
 

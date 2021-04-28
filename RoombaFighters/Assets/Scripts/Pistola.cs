@@ -2,19 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cuchillo : Arma
+public class Pistola : Arma
 {
-    public Animator animator;
+    public GameObject bala;
+    public GameObject canon;
     // Start is called before the first frame update
     void Start(){
-        animator = gameObject.GetComponent<Animator>();
         roomba = gameObject.GetComponentInParent<Transform>().gameObject;
         Duracion();
     }
 
     public override void Atacar(){
         if(atacable){
-            animator.SetTrigger("Atacar");
+            GameObject clon = Instantiate(bala, canon.transform.position, canon.transform.rotation);
             StartCoroutine("EsperarCoolDown");
         }
     }
@@ -22,12 +22,6 @@ public class Cuchillo : Arma
     public override void Duracion(){
         if(!armaActiva){
             StartCoroutine("DuracionArma");
-        }
-    }
-
-    void OnTriggerEnter(Collider collider){
-        if(collider.gameObject.tag == "Player" && collider.gameObject != roomba){
-            Debug.Log("Atacado");
         }
     }
 }
