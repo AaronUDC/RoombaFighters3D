@@ -2,16 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.AI;
 using UnityEngine;
+using UnityEditor;
 
-public class WanderState : StateMachineBehaviour
-{
-    public float wanderRadius;
-    public float wanderTimer;
-    private float timer;
-    public GameObject targetsGroup;
-    public Transform[] targets;
+public class RunAwayState : StateMachineBehaviour
+{   
+    public float refreshDestinationRate;
+    public float timer;
+    public Transform runAwayTarget;
     private NavMeshAgent agent;
     public GameObject gameObject;
+
+    public float targetDistance;
+
+    public Vector3 dirToTarget;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -19,40 +22,39 @@ public class WanderState : StateMachineBehaviour
         this.agent = animator.gameObject.GetComponent<NavMeshAgent>();
         this.gameObject = animator.gameObject;
         
-        targets = gameObject.GetComponent<RoombaNPCController>().targets;
+        runAwayTarget = gameObject.GetComponent<RoombaNPCController>().currentEnemyTarget;
+
+        RunAway();
 
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex){
-        
+    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
         timer += Time.deltaTime;
-        if (timer >= wanderTimer){
-            int i = Random.Range(0,targets.Length - 1);
-            Vector3 newPos = RandomNavSphere(targets[i].position, wanderRadius, -1);
-            agent.SetDestination(newPos);
+        if (timer >= refreshDestinationRate){
+            RunAway();
             timer = 0;
         }
         
+        animator.SetFloat("TargetDistance", Vector3.Distance(gameObject.transform.position, runAwayTarget.position));
 
     }
 
-    public static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask){
-        Vector3 randDirection = Random.insideUnitSphere * dist;
- 
-        randDirection += origin;
- 
+    private bool RunAway(){
+        dirToTarget = (gameObject.transform.position - runAwayTarget.position).normalized;
         NavMeshHit navHit;
- 
-        NavMesh.SamplePosition (randDirection, out navHit, dist, layermask);
- 
-        return navHit.position;
+        
+        NavMesh.SamplePosition (gameObject.transform.position + (dirToTarget * targetDistance), out navHit, 5 , -1);
+            
+        return agent.SetDestination(navHit.position);
     }
+
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-  
-    }
+    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    //{
+    //    
+    //}
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
