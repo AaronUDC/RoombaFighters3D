@@ -127,3 +127,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeTime: 20
   force: 10
+  minMaxBasura: {x: 10, y: 30}
+  minMaxVeces: {x: 1, y: 3}

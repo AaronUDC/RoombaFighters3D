@@ -134,4 +134,6 @@ MonoBehaviour:
   atacable: 1
   armaActiva: 0
   roomba: {fileID: 0}
+  minMaxBasura: {x: 5, y: 20}
+  minMaxVeces: {x: 2, y: 4}
   animator: {fileID: 0}
