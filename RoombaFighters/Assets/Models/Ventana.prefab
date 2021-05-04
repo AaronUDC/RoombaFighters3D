@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6340968831331949711}
   - component: {fileID: 1849306163215582990}
   - component: {fileID: 7034279819041724833}
-  - component: {fileID: 2395019805285821772}
+  - component: {fileID: 2085077684909160445}
   m_Layer: 0
   m_Name: Ventana
   m_TagString: Untagged
@@ -879,8 +879,8 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6556840033158868235}
   m_Mesh: {fileID: 0}
---- !u!64 &2395019805285821772
-MeshCollider:
+--- !u!65 &2085077684909160445
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -889,7 +889,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.10000219, y: 2.1776326, z: 4.5000005}
+  m_Center: {x: -0.0000002696179, y: -0.036184244, z: 0.00000022963759}
