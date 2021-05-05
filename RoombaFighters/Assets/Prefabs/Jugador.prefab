@@ -33,7 +33,7 @@ RectTransform:
   - {fileID: 1525371938466673881}
   - {fileID: 5299636406611594805}
   m_Father: {fileID: 8818202335734902497}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 35.664, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -101,36 +101,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!1 &3784446186244635138
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1725594434356299823}
-  m_Layer: 0
-  m_Name: PosicionObjeto
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1725594434356299823
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3784446186244635138}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8818202335734902497}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6114412520639128906
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,7 +251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6886792, g: 0.48771358, b: 0.35408506, a: 0.7607843}
+  m_Color: {r: 0, g: 1, b: 0, a: 0.7607843}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -865,10 +835,11 @@ GameObject:
   - component: {fileID: 8818202335734902506}
   - component: {fileID: 580126204214250213}
   - component: {fileID: 8818202335734902509}
+  - component: {fileID: 6268930802958613218}
   - component: {fileID: 8818202335734902499}
   - component: {fileID: 1372948910145594030}
   - component: {fileID: 2771923446308157626}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roomba
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -886,7 +857,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1725594434356299823}
   - {fileID: 6533056063134410083}
   m_Father: {fileID: 8818202335730456855}
   m_RootOrder: 0
@@ -1003,7 +973,22 @@ MonoBehaviour:
   playerInput: {fileID: 8818202335734902499}
   cam: {fileID: 8818202334892341516}
   cinemachine: {fileID: 8818202335784117400}
-  posicionArmas: {fileID: 0}
+  arma: {fileID: 0}
+--- !u!114 &6268930802958613218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8818202335734902507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f43af620bf1b24bb0a849a01a0f824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isIA: 0
+  arma: {fileID: 0}
+  powerUp: {fileID: 0}
 --- !u!114 &8818202335734902499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1344,7 +1329,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8818202336475077486}
-  m_LocalRotation: {x: 0.11594305, y: 1e-45, z: -0, w: 0.99325585}
+  m_LocalRotation: {x: 0.115943044, y: 1e-45, z: -0, w: 0.99325585}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

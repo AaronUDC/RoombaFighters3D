@@ -1,0 +1,28 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class EquipmentController : MonoBehaviour
+{   
+    public bool isIA;
+
+    public GameObject arma;
+
+    public GameObject powerUp;
+
+    public void ObtenerArma(GameObject arma){
+        if(this.arma!=null){
+            this.arma.GetComponent<Arma>().DestroyArma();
+            this.arma = null;
+        }
+        this.arma = Instantiate(arma, transform.position, transform.rotation);
+        this.arma.transform.SetParent(gameObject.transform);
+    }
+
+    public void Atacar(){
+        if(arma != null){
+            arma.GetComponent<Arma>().Atacar();
+        }
+    }
+    
+}
