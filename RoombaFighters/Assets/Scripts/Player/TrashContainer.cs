@@ -91,5 +91,10 @@ public class TrashContainer : MonoBehaviour
         float logSize = Mathf.Log(1+ trashLevel,2);
         textUI.text = trashLevel + "";
         trashMeterUI.transform.localScale = new Vector3(logSize, logSize, logSize);
+        if(this.name == "Roomba"){
+        	PlayerPrefs.SetInt("PuntuacionJ",trashLevel);
+    	} else{
+        	PlayerPrefs.SetInt("PuntuacionB",trashLevel);
+        }
     }
 }
