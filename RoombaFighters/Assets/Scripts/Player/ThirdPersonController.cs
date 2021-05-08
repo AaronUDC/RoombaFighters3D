@@ -37,6 +37,8 @@ public class ThirdPersonController : MonoBehaviour
 
     public GameObject arma;
 
+    public GameObject powerUp;
+
     public void OnAcelerar(InputValue context){
         vert = context.Get<float>();
     }
@@ -50,7 +52,6 @@ public class ThirdPersonController : MonoBehaviour
     }
 
     public void OnAtacar(){
-
         if(arma != null){
             arma.GetComponent<Arma>().Atacar();
         }
@@ -70,7 +71,16 @@ public class ThirdPersonController : MonoBehaviour
         this.arma = Instantiate(arma, transform.position, transform.rotation);
         this.arma.transform.SetParent(gameObject.transform);
     }
-    
+
+    public void ObtenerPowerUp(GameObject powerUp){
+        if(this.powerUp!=null){
+            this.powerUp.GetComponent<PowerUp>().DestroyPowerUp();
+            this.powerUp = null;
+        }
+        this.powerUp = Instantiate(powerUp, transform.position, transform.rotation);
+        this.powerUp.transform.SetParent(gameObject.transform);
+    }
+
     void FixedUpdate()
     {
         Girar();
