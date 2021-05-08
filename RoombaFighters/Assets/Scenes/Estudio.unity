@@ -330,7 +330,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh46002
+  m_Name: pb_Mesh55108
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -544,7 +544,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-128520
+  m_Name: pb_Mesh-58588
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -758,7 +758,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-128686
+  m_Name: pb_Mesh-58780
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1673,7 +1673,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh45856
+  m_Name: pb_Mesh54950
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2104,7 +2104,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-128530
+  m_Name: pb_Mesh-58598
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2308,7 +2308,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh45926
+  m_Name: pb_Mesh55030
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2533,6 +2533,133 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8279984480643556229, guid: 07f926b20e6d7964696a3e36b06e7838, type: 3}
   m_PrefabInstance: {fileID: 1686394299}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &344076299
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 344076300}
+  - component: {fileID: 344076301}
+  m_Layer: 0
+  m_Name: MusicaFondo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &344076300
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344076299}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 752639324}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &344076301
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344076299}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: a5f2cd056946c1d4699a2b34d1014ef3, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.153
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &380959964
 GameObject:
   m_ObjectHideFlags: 0
@@ -5920,7 +6047,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh46072
+  m_Name: pb_Mesh55196
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6834,6 +6961,37 @@ Transform:
   m_Father: {fileID: 226178430}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &752639323
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 752639324}
+  m_Layer: 0
+  m_Name: Musica
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &752639324
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752639323}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.946432, y: -8.138131, z: 18.21058}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 344076300}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &765299485
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7243,7 +7401,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-128616
+  m_Name: pb_Mesh-58710
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7452,9 +7610,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 219352993}
     m_Modifications:
     - target: {fileID: 580126204214250213, guid: 9505093be1906654a99762a010b6e76b, type: 3}
+      propertyPath: soundTrash
+      value: 
+      objectReference: {fileID: 8980390337240664614, guid: 064e4de67fe4be1458e756daeb3f63d5, type: 3}
+    - target: {fileID: 580126204214250213, guid: 9505093be1906654a99762a010b6e76b, type: 3}
       propertyPath: trashModel
       value: 
       objectReference: {fileID: 832874372151302486, guid: af09dfda0c0a7634fa5dfa5132d8e02f, type: 3}
+    - target: {fileID: 580126204214250213, guid: 9505093be1906654a99762a010b6e76b, type: 3}
+      propertyPath: soundDamage
+      value: 
+      objectReference: {fileID: 791888850424185942, guid: 28d7b616bc9569944a63ab0e4b3fc063, type: 3}
     - target: {fileID: 2771923446308157626, guid: 9505093be1906654a99762a010b6e76b, type: 3}
       propertyPath: m_PlayAutomatically
       value: 0
@@ -7467,6 +7633,10 @@ PrefabInstance:
       propertyPath: m_Animations.Array.data[0]
       value: 
       objectReference: {fileID: 7400000, guid: a78df43307025a14aa4e51fbf4a0e949, type: 2}
+    - target: {fileID: 6268930802958613218, guid: 9505093be1906654a99762a010b6e76b, type: 3}
+      propertyPath: soundCube
+      value: 
+      objectReference: {fileID: 4089156098820068119, guid: 71daac91039d16d4c9c1fc5595a4f265, type: 3}
     - target: {fileID: 8818202334892341505, guid: 9505093be1906654a99762a010b6e76b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -7555,6 +7725,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8818202335734902509, guid: 9505093be1906654a99762a010b6e76b, type: 3}
+      propertyPath: soundCube
+      value: 
+      objectReference: {fileID: 4089156098820068119, guid: 71daac91039d16d4c9c1fc5595a4f265, type: 3}
+    - target: {fileID: 8818202335734902509, guid: 9505093be1906654a99762a010b6e76b, type: 3}
+      propertyPath: soundDash
+      value: 
+      objectReference: {fileID: 4985120923029248855, guid: 5993fb63d6022ac4589a0badaba62125, type: 3}
+    - target: {fileID: 8818202335734902509, guid: 9505093be1906654a99762a010b6e76b, type: 3}
+      propertyPath: soundFire
+      value: 
+      objectReference: {fileID: 1766137248545475250, guid: 383000df66be4a740a04061692b77c16, type: 3}
+    - target: {fileID: 8818202335734902509, guid: 9505093be1906654a99762a010b6e76b, type: 3}
+      propertyPath: soundKnife
+      value: 
+      objectReference: {fileID: 6309389380058247611, guid: d756c2e007d682c4abaf841d90ca05db, type: 3}
+    - target: {fileID: 8818202335734902509, guid: 9505093be1906654a99762a010b6e76b, type: 3}
+      propertyPath: soundAttack
+      value: 
+      objectReference: {fileID: 1766137248545475250, guid: 383000df66be4a740a04061692b77c16, type: 3}
     - target: {fileID: 8818202335784117402, guid: 9505093be1906654a99762a010b6e76b, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.34868574
@@ -7795,7 +7985,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh45960
+  m_Name: pb_Mesh55066
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9904,7 +10094,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh45640
+  m_Name: pb_Mesh54678
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10159,7 +10349,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh45840
+  m_Name: pb_Mesh54934
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11075,7 +11265,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh45778
+  m_Name: pb_Mesh54864
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12865,7 +13055,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh45884
+  m_Name: pb_Mesh54978
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -13865,7 +14055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1298fa2c2042f584a987fc8f6f8994a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tiempoMinutos: 5
+  tiempoMinutos: 1
   tiempoRestante: 0
   panelTemporizador: {fileID: 217116647}
   contenedorJugador1: {fileID: 598389307}
@@ -14396,7 +14586,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh45702
+  m_Name: pb_Mesh54774
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15589,6 +15779,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 120483657288049553, guid: 6d6e4e1d7f1466849801db3419d976ff, type: 3}
   m_PrefabInstance: {fileID: 2080401129}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2037151510 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8818202334892341516, guid: 9505093be1906654a99762a010b6e76b, type: 3}
+  m_PrefabInstance: {fileID: 809922238}
+  m_PrefabAsset: {fileID: 0}
+--- !u!81 &2037151512
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037151510}
+  m_Enabled: 1
 --- !u!1001 &2040363416
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15896,6 +16099,14 @@ PrefabInstance:
       propertyPath: m_CullTransparentMesh
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5774719969792352953, guid: 6d6e4e1d7f1466849801db3419d976ff, type: 3}
+      propertyPath: trashLevel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774719969792352953, guid: 6d6e4e1d7f1466849801db3419d976ff, type: 3}
+      propertyPath: soundDamage
+      value: 
+      objectReference: {fileID: 791888850424185942, guid: 28d7b616bc9569944a63ab0e4b3fc063, type: 3}
     - target: {fileID: 6285793481821366768, guid: 6d6e4e1d7f1466849801db3419d976ff, type: 3}
       propertyPath: m_SizeDelta.x
       value: -869.0462

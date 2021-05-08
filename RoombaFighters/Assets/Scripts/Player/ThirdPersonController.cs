@@ -36,6 +36,11 @@ public class ThirdPersonController : MonoBehaviour
     private CinemachineFreeLook freeLook;
 
     public GameObject arma;
+    
+    public GameObject soundDash;
+    public GameObject soundFire;    
+    public GameObject soundKnife;
+    public GameObject soundCube;
 
     public void OnAcelerar(InputValue context){
         vert = context.Get<float>();
@@ -47,12 +52,19 @@ public class ThirdPersonController : MonoBehaviour
 
     public void OnDash(){
         rb.AddForce(transform.forward * fuerzaDash, ForceMode.Impulse);
+        Destroy(Instantiate(soundDash,new Vector3(0, 5, 0),Quaternion.identity),2f);
     }
 
     public void OnAtacar(){
 
         if(arma != null){
             arma.GetComponent<Arma>().Atacar();
+            Debug.Log(arma.name);
+            if(arma.name=="Pistola(Clone)"){
+            	Destroy(Instantiate(soundFire,new Vector3(0, 5, 0),Quaternion.identity),2f);
+        	} else {
+				Destroy(Instantiate(soundKnife,new Vector3(0, 5, 0),Quaternion.identity),2f);	
+			}
         }
     }
 
@@ -67,6 +79,7 @@ public class ThirdPersonController : MonoBehaviour
             this.arma.GetComponent<Arma>().DestroyArma();
             this.arma = null;
         }
+        Destroy(Instantiate(soundCube,new Vector3(0, 5, 0),Quaternion.identity),2f);
         this.arma = Instantiate(arma, transform.position, transform.rotation);
         this.arma.transform.SetParent(gameObject.transform);
     }
