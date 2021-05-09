@@ -7,7 +7,9 @@ public class Pistola : Arma
     public GameObject bala;
     public GameObject canon;
     // Start is called before the first frame update
-
+    protected override void Start(){
+        base.Start();
+    }
 
     public override void Atacar(){
         if(atacable){

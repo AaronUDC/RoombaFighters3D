@@ -22,7 +22,6 @@ public class Cuchillo : Arma
         }
     }
 
-
     void OnTriggerEnter(Collider collider){
         if(collider.gameObject.tag == "Player" && collider.gameObject != roomba){
             Debug.Log("Atacado");

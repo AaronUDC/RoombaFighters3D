@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class PowerUp : MonoBehaviour
 {
-    public float tiempoPowerUp = 10.0f;
+    public float tiempoPowerUp = 15.0f;
     public GameObject roomba;
+    public GameObject pickUpEffect;
 
     protected virtual void Start(){
         roomba = gameObject.transform.parent.gameObject;
@@ -20,5 +21,16 @@ public class PowerUp : MonoBehaviour
     protected IEnumerator EsperarDestruccion(){
         yield return new WaitForSeconds(tiempoPowerUp);
         DestroyPowerUp();
+    }
+
+    protected void PickUpPowerUp(){
+        Instantiate(pickUpEffect, transform.position, transform.rotation);
+        Destroy(gameObject);
+    }
+
+    public void OnTriggerEnter(Collider collider){
+        if(collider.CompareTag("Player")){
+            PickUpPowerUp();
+        }
     }
 }
