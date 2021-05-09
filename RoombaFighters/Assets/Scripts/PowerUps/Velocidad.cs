@@ -1,0 +1,22 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Velocidad : PowerUp
+{
+    public Vector2Int minMaxBasura;
+
+    public Vector2Int minMaxVeces;
+
+    public Animator animator;
+    // Start is called before the first frame update
+    protected override void Start(){
+        base.Start();
+    }
+
+    void OnTriggerEnter(Collider collider){
+        if(collider.gameObject.tag == "Player" && collider.gameObject != roomba){
+            Debug.Log("Aumento");
+        }
+    }
+}

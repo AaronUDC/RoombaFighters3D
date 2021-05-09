@@ -71,7 +71,9 @@ public class TrashContainer : MonoBehaviour
             }
             UpdateUI();
             StartCoroutine("Invulnerability");
-        }
+        } else {
+			isVulnerable = true;
+		}
     }
 
     private void SpawnTrash(int cuantity){
