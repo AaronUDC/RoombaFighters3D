@@ -21,5 +21,10 @@ public class MenuController : MonoBehaviour
 
         pantallas[screen].SetActive(true);
     }
+
+
+    public void GotoLevel(string scene){
+        SceneManager.LoadScene(scene);
+    }
 }
 

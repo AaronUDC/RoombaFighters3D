@@ -19,7 +19,7 @@ public class GameDirector1J : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        tiempoRestante = 60 * tiempoMinutos;
+        tiempoRestante = 60 * OpcionesJuego.GetInstance().tiempoMinutos;
     }
 
     // Update is called once per frame
