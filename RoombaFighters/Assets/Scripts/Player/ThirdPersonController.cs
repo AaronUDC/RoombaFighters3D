@@ -14,6 +14,7 @@ public class ThirdPersonController : MonoBehaviour
     public float velocidadGiro;
     public float maxTorque;
     public float fuerzaDash;
+    public float boost = 1f;
     [Space(10)]
     
     //private float tiempoGiro = 0.1f;
@@ -124,16 +125,7 @@ public class ThirdPersonController : MonoBehaviour
     void Acelerar(){
 
         if(rb.velocity.magnitude < maxVel && Mathf.Abs(vert) > 0.1f)
-            if(powerUp != null){
-            	if(powerUp.GetComponent<PowerUp>().name == "Velocidad(Clone)"){;
-            		rb.AddForce(transform.forward * aceleracion * vert * Time.fixedDeltaTime*powerUp.GetComponent<PowerUp>().Aumento());
-            	} else {
-            		this.GetComponent<TrashContainer>().isVulnerable = false;
-					rb.AddForce(transform.forward * aceleracion * vert * Time.fixedDeltaTime);
-				}
-			} else {
-				rb.AddForce(transform.forward * aceleracion * vert * Time.fixedDeltaTime);
-			}
+			rb.AddForce(transform.forward * aceleracion * vert * Time.fixedDeltaTime*boost);
         	velocidadActual = rb.velocity.magnitude;
     }
 
