@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 6607748494705779829}
   - component: {fileID: 5156029766794810447}
   - component: {fileID: 5774719969792352953}
+  - component: {fileID: 1978664900370662827}
   m_Layer: 0
   m_Name: RoombaNPC
   m_TagString: Player
@@ -252,6 +253,23 @@ MonoBehaviour:
   invulnerabilityAnim: {fileID: 7400000, guid: a78df43307025a14aa4e51fbf4a0e949, type: 2}
   textUI: {fileID: 3681976116370232734}
   trashMeterUI: {fileID: 1372083908369403302}
+  soundDamage: {fileID: 791888850424185942, guid: 28d7b616bc9569944a63ab0e4b3fc063, type: 3}
+  soundTrash: {fileID: 8980390337240664614, guid: 064e4de67fe4be1458e756daeb3f63d5, type: 3}
+--- !u!114 &1978664900370662827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785838088220096811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f43af620bf1b24bb0a849a01a0f824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isIA: 1
+  arma: {fileID: 0}
+  powerUp: {fileID: 0}
 --- !u!1 &1249749950714830640
 GameObject:
   m_ObjectHideFlags: 0

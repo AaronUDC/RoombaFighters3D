@@ -9,7 +9,7 @@ public class PowerUpRecolectable : MonoBehaviour
     private void OnTriggerEnter(Collider col){
 		if(col.tag == "Player"){
             int i = Random.Range(0, powerUps.Length);
-			col.GetComponent<ThirdPersonController>().ObtenerPowerUp(powerUps[i]);
+			col.GetComponent<EquipmentController>().ObtenerPowerUp(powerUps[i]);
 		}
     }
 

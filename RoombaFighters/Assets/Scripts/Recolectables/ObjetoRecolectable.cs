@@ -5,11 +5,20 @@ using UnityEngine;
 public class ObjetoRecolectable : MonoBehaviour
 {
     public GameObject[] armas;
+    public GameObject[] powerUps;
+
 
     private void OnTriggerEnter(Collider col){
 		if(col.tag == "Player"){
-            int i = Random.Range(0, armas.Length);
-			col.GetComponent<ThirdPersonController>().ObtenerArma(armas[i]);
+            int j = Random.Range(0,2);
+            j = 1;
+            if (j == 0){
+                int i = Random.Range(0, armas.Length);
+			    col.GetComponent<EquipmentController>().ObtenerArma(armas[i]);
+            }else{
+                int i = Random.Range(0, powerUps.Length);
+			    col.GetComponent<EquipmentController>().ObtenerPowerUp(powerUps[i]);
+            }
 		}
     }
 
@@ -17,5 +26,7 @@ public class ObjetoRecolectable : MonoBehaviour
         if(col.tag == "Player"){
             Destroy(gameObject, 0.5f);
         }
+        
+        
     }
 }

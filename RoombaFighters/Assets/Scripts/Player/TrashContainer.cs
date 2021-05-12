@@ -24,6 +24,8 @@ public class TrashContainer : MonoBehaviour
     public Text textUI;
     public Image trashMeterUI;
 
+	public GameObject soundDamage;
+	public GameObject soundTrash;
 
     void Update(){
         UpdateUI();
@@ -33,10 +35,12 @@ public class TrashContainer : MonoBehaviour
 
     public void AddTrash(int trashSize){
         trashLevel += trashSize;
+        Destroy(Instantiate(soundTrash,new Vector3(0, 5, 0),Quaternion.identity),1f);
         UpdateUI();
     }
 
     IEnumerator Invulnerability(){
+    	Destroy(Instantiate(soundDamage,new Vector3(0, 5, 0),Quaternion.identity),1f);
         isVulnerable = false;
         
         Animation anim = gameObject.GetComponent<Animation>();
@@ -67,7 +71,9 @@ public class TrashContainer : MonoBehaviour
             }
             UpdateUI();
             StartCoroutine("Invulnerability");
-        }
+        } else {
+			isVulnerable = true;
+		}
     }
 
     private void SpawnTrash(int cuantity){

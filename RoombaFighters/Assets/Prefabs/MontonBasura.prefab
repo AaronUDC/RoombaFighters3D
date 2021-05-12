@@ -118785,3 +118785,6 @@ MonoBehaviour:
   armas:
   - {fileID: 771495706920457595, guid: 4d0d653a226bdc04bb5c4889a5b2ba6f, type: 3}
   - {fileID: 2284462657953500600, guid: e606a0bb30064aa4aa9fe0c3dccd1061, type: 3}
+  powerUps:
+  - {fileID: 8969863644563595828, guid: 56b97844f49d6304fa8bf8edbcfbe2a3, type: 3}
+  - {fileID: 2649724951766800184, guid: 001917f258819fa4c995bb7fed2164dc, type: 3}

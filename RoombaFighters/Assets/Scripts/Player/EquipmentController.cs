@@ -19,6 +19,7 @@ public class EquipmentController : MonoBehaviour
         this.arma.transform.SetParent(gameObject.transform);
     }
 
+
     public void ObtenerPowerUp(GameObject powerUp){
         if(this.powerUp!=null){
             this.powerUp.GetComponent<PowerUp>().DestroyPowerUp();
@@ -31,6 +32,13 @@ public class EquipmentController : MonoBehaviour
     public void Atacar(){
         if(arma != null){
             arma.GetComponent<Arma>().Atacar();
+        }
+    }
+    
+    
+	public void Update(){
+        if(this.powerUp==null && !isIA){
+            this.GetComponent<ThirdPersonController>().boost = 1;
         }
     }
     

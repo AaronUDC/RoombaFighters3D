@@ -295,7 +295,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8818202334892341516}
   m_LocalRotation: {x: 0.15004767, y: -0.0000000117859695, z: 0.0000000017887074, w: 0.9886788}
-  m_LocalPosition: {x: 10.194746, y: 0.11732453, z: 5.634445}
+  m_LocalPosition: {x: 10.194746, y: 0.11732435, z: 5.634445}
   m_LocalScale: {x: 0.44964862, y: 0.07947883, z: 0.2842581}
   m_Children: []
   m_Father: {fileID: 8818202335730456855}
@@ -321,9 +321,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.5
+    y: 0
     width: 1
-    height: 0.5
+    height: 1
   near clip plane: 0.01
   far clip plane: 5000
   field of view: 60
@@ -949,6 +949,8 @@ MonoBehaviour:
   invulnerabilityAnim: {fileID: 7400000, guid: a78df43307025a14aa4e51fbf4a0e949, type: 2}
   textUI: {fileID: 1215845005666633439}
   trashMeterUI: {fileID: 6180147425001745483}
+  soundDamage: {fileID: 791888850424185942, guid: 28d7b616bc9569944a63ab0e4b3fc063, type: 3}
+  soundTrash: {fileID: 8980390337240664614, guid: 064e4de67fe4be1458e756daeb3f63d5, type: 3}
 --- !u!114 &8818202335734902509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -967,13 +969,16 @@ MonoBehaviour:
   velocidadGiro: 100
   maxTorque: 3
   fuerzaDash: 5
+  boost: 1
   vert: 0
   horiz: 0
   rb: {fileID: 8818202335734902506}
   playerInput: {fileID: 8818202335734902499}
   cam: {fileID: 8818202334892341516}
   cinemachine: {fileID: 8818202335784117400}
-  arma: {fileID: 0}
+  dashCooldown: 2
+  soundDash: {fileID: 4985120923029248855, guid: 5993fb63d6022ac4589a0badaba62125, type: 3}
+  soundCube: {fileID: 4089156098820068119, guid: 71daac91039d16d4c9c1fc5595a4f265, type: 3}
 --- !u!114 &6268930802958613218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1329,7 +1334,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8818202336475077486}
-  m_LocalRotation: {x: 0.115943044, y: 1e-45, z: -0, w: 0.99325585}
+  m_LocalRotation: {x: 0.11594305, y: 1e-45, z: -0, w: 0.99325585}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

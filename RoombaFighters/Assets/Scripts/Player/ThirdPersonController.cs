@@ -14,6 +14,7 @@ public class ThirdPersonController : MonoBehaviour
     public float velocidadGiro;
     public float maxTorque;
     public float fuerzaDash;
+    public float boost = 1f;
     [Space(10)]
     
     //private float tiempoGiro = 0.1f;
@@ -35,9 +36,10 @@ public class ThirdPersonController : MonoBehaviour
  
     private CinemachineFreeLook freeLook;
 
-    public GameObject arma;
-
-    public GameObject powerUp;
+    private bool canDash = true;  
+    public float dashCooldown = 2.0f;  
+    public GameObject soundDash;
+    public GameObject soundCube;
 
     public void OnAcelerar(InputValue context){
         vert = context.Get<float>();
@@ -48,13 +50,22 @@ public class ThirdPersonController : MonoBehaviour
     }
 
     public void OnDash(){
-        rb.AddForce(transform.forward * fuerzaDash, ForceMode.Impulse);
+        if(canDash){
+            rb.AddForce(transform.forward * fuerzaDash, ForceMode.Impulse);
+            Destroy(Instantiate(soundDash,new Vector3(0, 5, 0),Quaternion.identity),2f);
+            StartCoroutine("DashCooldown");
+        }
     }
 
+    private IEnumerator DashCooldown(){
+        canDash= false;
+        yield return new WaitForSeconds(dashCooldown);
+        canDash= true;
+
+    } 
+
     public void OnAtacar(){
-        if(arma != null){
-            arma.GetComponent<Arma>().Atacar();
-        }
+        GetComponent<EquipmentController>().Atacar();
     }
 
  
@@ -63,44 +74,25 @@ public class ThirdPersonController : MonoBehaviour
         freeLook = cinemachine.GetComponent<CinemachineFreeLook>();
     }
 
-    public void ObtenerArma(GameObject arma){
-        if(this.arma!=null){
-            this.arma.GetComponent<Arma>().DestroyArma();
-            this.arma = null;
-        }
-        this.arma = Instantiate(arma, transform.position, transform.rotation);
-        this.arma.transform.SetParent(gameObject.transform);
-    }
-
-    public void ObtenerPowerUp(GameObject powerUp){
-        if(this.powerUp!=null){
-            this.powerUp.GetComponent<PowerUp>().DestroyPowerUp();
-            this.powerUp = null;
-        }
-        this.powerUp = Instantiate(powerUp, transform.position, transform.rotation);
-        this.powerUp.transform.SetParent(gameObject.transform);
-    }
-
+    
     void FixedUpdate()
     {
         Girar();
         Acelerar();
-        /*if (horiz > 0.1f || vert > 0.1f){
-            float anguloObjetivo = Mathf.Atan2(direction.x,direction.z) * Mathf.Rad2Deg + cam.transform.eulerAngles.y;
-
-            float angulo = Mathf.SmoothDampAngle(transform.eulerAngles.y, anguloObjetivo,ref velocidadGiro, tiempoGiro);
-
-            transform.rotation = Quaternion.Euler(0f, angulo, 0f);
-            
-            Vector3 moveDir = Quaternion.Euler(0f,anguloObjetivo,0f) * Vector3.forward;
-            rb.AddForce(moveDir.normalized * fuerza * Time.fixedDeltaTime, ForceMode.Force);
-
-        }*/
-
     }
 
     void Update(){
-        
+        GameObject powerUp;
+        if((powerUp = GetComponent<EquipmentController>().powerUp)!=null){
+            Velocidad velocidadPowerUp;
+            powerUp.TryGetComponent<Velocidad>(out velocidadPowerUp);
+
+            if (velocidadPowerUp != null)
+                boost = velocidadPowerUp.aumento;
+            }else{
+                boost = 1.0f;
+            }
+            
     }
     void Girar(){
         rb.maxAngularVelocity = maxTorque;
@@ -112,9 +104,8 @@ public class ThirdPersonController : MonoBehaviour
     void Acelerar(){
 
         if(rb.velocity.magnitude < maxVel && Mathf.Abs(vert) > 0.1f)
-            rb.AddForce(transform.forward * aceleracion * vert * Time.fixedDeltaTime);
-            
-        velocidadActual = rb.velocity.magnitude;
+			rb.AddForce(transform.forward * aceleracion * vert * Time.fixedDeltaTime*boost);
+        	velocidadActual = rb.velocity.magnitude;
     }
 
 }

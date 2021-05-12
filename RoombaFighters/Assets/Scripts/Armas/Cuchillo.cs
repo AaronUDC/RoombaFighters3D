@@ -8,6 +8,8 @@ public class Cuchillo : Arma
 
     public Vector2Int minMaxVeces;
 
+    public GameObject sonidoAtaque;
+
     public Animator animator;
     // Start is called before the first frame update
     protected override void Start(){
@@ -18,6 +20,7 @@ public class Cuchillo : Arma
     public override void Atacar(){
         if(atacable){
             animator.SetTrigger("Atacar");
+            Destroy(Instantiate(sonidoAtaque,transform.position,transform.rotation), 2.0f);
             StartCoroutine("EsperarCoolDown");
         }
     }

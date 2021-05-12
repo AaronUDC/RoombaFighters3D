@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameDirector1J : MonoBehaviour
 {
@@ -33,6 +34,7 @@ public class GameDirector1J : MonoBehaviour
                 Debug.Log("FIN Ganador: Jugador 2");
             else 
                 Debug.Log("FIN Empate");
+            SceneManager.LoadScene("Victory");
         }else{
             int minutos, segundos;
             minutos = Mathf.FloorToInt(tiempoRestante / 60);

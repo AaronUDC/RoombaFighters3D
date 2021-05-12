@@ -17,7 +17,7 @@ public class Arma : MonoBehaviour
     public virtual void Atacar(){}
 
     public virtual void DestroyArma(){
-        roomba.GetComponent<ThirdPersonController>().arma = null;
+        roomba.GetComponent<EquipmentController>().arma = null;
         Destroy(gameObject);
     }
 
