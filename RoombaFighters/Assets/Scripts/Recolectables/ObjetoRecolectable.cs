@@ -11,7 +11,6 @@ public class ObjetoRecolectable : MonoBehaviour
     private void OnTriggerEnter(Collider col){
 		if(col.tag == "Player"){
             int j = Random.Range(0,2);
-            j = 1;
             if (j == 0){
                 int i = Random.Range(0, armas.Length);
 			    col.GetComponent<EquipmentController>().ObtenerArma(armas[i]);

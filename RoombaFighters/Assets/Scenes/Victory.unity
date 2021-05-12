@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0.99999905, b: 0.99999905, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 91026726}
   - component: {fileID: 91026725}
   m_Layer: 5
-  m_Name: PuntuacionJ
+  m_Name: PuntuacionJ1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -498,7 +498,7 @@ GameObject:
   - component: {fileID: 418594187}
   - component: {fileID: 418594186}
   m_Layer: 5
-  m_Name: PuntuacionB
+  m_Name: PuntuacionJ2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -926,7 +926,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: MenuInicial
+          m_StringArgument: Menu
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &818547470
@@ -1708,7 +1708,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1994710163}
   - component: {fileID: 1994710162}
-  - component: {fileID: 1994710164}
   - component: {fileID: 1994710165}
   m_Layer: 0
   m_Name: VictoryControl
@@ -1743,22 +1742,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1994710164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1994710161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 051dcab19b74a154abb292d9509f436f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sliderValue: 0
-  panelBrillo: {fileID: 2013095151}
-  panelOpciones: {fileID: 0}
-  slide: {fileID: 0}
 --- !u!114 &1994710165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1771,12 +1754,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5a14eee6bf0c5243b89f480b60676b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jugador: 0
-  bot: 0
+  jugador1: 0
+  jugador2: 0
   victory: {fileID: 1855859070}
   gameOver: {fileID: 245879944}
-  puntuacionJ: {fileID: 91026725}
-  puntuacionB: {fileID: 418594186}
+  puntuacion1: {fileID: 91026725}
+  puntuacion2: {fileID: 418594186}
 --- !u!1 &2013095149
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,49 +5,27 @@ using UnityEngine.UI;
 
 public class ChooseWinner : MonoBehaviour
 {
-	public int jugador;
-	public int bot;
+	public int jugador1;
+	public int jugador2;
 	public GameObject victory;
 	public GameObject gameOver;
-	public Text puntuacionJ;
-	public Text puntuacionB;
+	public Text puntuacion1;
+	public Text puntuacion2;
 	
     // Start is called before the first frame update
-    void Start()
+    void Update()
     {
-        jugador = PlayerPrefs.GetInt("PuntuacionJ");
-        bot = PlayerPrefs.GetInt("PuntuacionB");
-        puntuacionJ.text = "" + jugador;
-        puntuacionB.text = "" + bot;
-        if(jugador >= bot){
-            puntuacionJ.text = "" + jugador;
-        	puntuacionB.text = "" + bot;
+        jugador1 = OpcionesJuego.GetInstance().puntosJ1;
+        jugador2 = OpcionesJuego.GetInstance().puntosJ2;
+        puntuacion1.text = "" + jugador1;
+        puntuacion2.text = "" + jugador2;
+        if(jugador1 >= jugador2){
 			victory.SetActive(true);
 			gameOver.SetActive(false);
 		} else {
-			puntuacionJ.text = "" + bot;
-        	puntuacionB.text = "" + jugador;
 			victory.SetActive(false);
 			gameOver.SetActive(true);
 		}
         
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        jugador = PlayerPrefs.GetInt("PuntuacionJ");
-        bot = PlayerPrefs.GetInt("PuntuacionB");
-        if(jugador >= bot){
-        	puntuacionJ.text = "" + jugador;
-        	puntuacionB.text = "" + bot;
-			victory.SetActive(true);
-			gameOver.SetActive(false);
-		} else {
-		    puntuacionJ.text = "" + bot;
-        	puntuacionB.text = "" + jugador;
-			victory.SetActive(false);
-			gameOver.SetActive(true);
-		}
     }
 }

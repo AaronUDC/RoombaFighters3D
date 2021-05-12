@@ -28,12 +28,16 @@ public class GameDirector1J : MonoBehaviour
     {
         if(tiempoRestante < 0){
             //Terminar nivel
-            if(contenedorJugador1.trashLevel > contenedorJugador2.trashLevel)
+            /*if(contenedorJugador1.trashLevel > contenedorJugador2.trashLevel)
                 Debug.Log("FIN Ganador: Jugador 1");
             else if (contenedorJugador1.trashLevel < contenedorJugador2.trashLevel)
                 Debug.Log("FIN Ganador: Jugador 2");
             else 
                 Debug.Log("FIN Empate");
+            */
+            OpcionesJuego.GetInstance().puntosJ1 = contenedorJugador1.trashLevel;
+            OpcionesJuego.GetInstance().puntosJ2 = contenedorJugador2.trashLevel;
+
             SceneManager.LoadScene("Victory");
         }else{
             int minutos, segundos;
