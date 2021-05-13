@@ -6,10 +6,12 @@ public class Trash : MonoBehaviour
 {
     public int trashSize = 10;
 
+    public Vector2Int randomSizeMinMax = new Vector2Int(10,50);
     private float logSize;
     public float lifeTime = 30;
-
-    // Start is called before the first frame update
+    void Awake(){
+        trashSize = Random.Range(randomSizeMinMax.x,randomSizeMinMax.y);
+    }
     void Start()
     {      
         //Randomizar los tamaños y tiempos de desaparición
