@@ -27,6 +27,11 @@ public class TrashContainer : MonoBehaviour
 	public GameObject soundDamage;
 	public GameObject soundTrash;
 
+    void Start(){
+        Animation anim = gameObject.GetComponent<Animation>();
+        anim.AddClip(invulnerabilityAnim,"Invulnerability");
+    }
+
     void Update(){
         UpdateUI();
     }
@@ -44,12 +49,11 @@ public class TrashContainer : MonoBehaviour
         isVulnerable = false;
         
         Animation anim = gameObject.GetComponent<Animation>();
-        anim.AddClip(invulnerabilityAnim,"Invulnerability");
-        anim.Play();
+        
+        anim.Play("Invulnerability");
 
         yield return new WaitForSeconds(invulnerabilityTime);
 
-        anim.RemoveClip(invulnerabilityAnim);
         isVulnerable = true;
     }
 

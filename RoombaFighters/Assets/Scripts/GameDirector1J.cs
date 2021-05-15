@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameDirector1J : MonoBehaviour
 {
-
+    
     public int tiempoMinutos;
 
     public float tiempoRestante;
@@ -47,7 +47,13 @@ public class GameDirector1J : MonoBehaviour
             panelTemporizador.text = minutos.ToString("00") + ":" + segundos.ToString("00");
             tiempoRestante -= Time.deltaTime;
         }
+    }
 
+    public void PausarJuego(){
+
+    }
+
+    public void ReanudarJuego(){
 
     }
 }

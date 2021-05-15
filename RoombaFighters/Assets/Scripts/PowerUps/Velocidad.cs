@@ -10,4 +10,5 @@ public class Velocidad : PowerUp
     protected override void Start(){
         base.Start();
     }
+
 }

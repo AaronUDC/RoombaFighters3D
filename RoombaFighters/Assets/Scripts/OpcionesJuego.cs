@@ -13,6 +13,7 @@ public class OpcionesJuego
     
     public int puntosJ2;
 
+
     private static OpcionesJuego instancia;
 
     private OpcionesJuego(bool multijugador, int tiempoMinutos){

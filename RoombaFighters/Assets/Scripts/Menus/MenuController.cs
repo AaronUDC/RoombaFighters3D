@@ -14,17 +14,23 @@ public class MenuController : MonoBehaviour
     }
 
     public void SetActiveScreen(int screen){
-        if(screen < pantallas.Length){
-            for(int i = 0; i<pantallas.Length; i++)
-                pantallas[i].SetActive(false);
-        }
+        if(pantallas != null && pantallas.Length > 0){
+            if(screen < pantallas.Length){
+                for(int i = 0; i<pantallas.Length; i++)
+                    pantallas[i].SetActive(false);
+            }
 
-        pantallas[screen].SetActive(true);
+            pantallas[screen].SetActive(true);
+        }
     }
 
 
     public void GotoLevel(string scene){
         SceneManager.LoadScene(scene);
+    }
+
+    public void RestartLevel(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
 

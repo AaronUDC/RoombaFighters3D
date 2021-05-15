@@ -49,6 +49,14 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": ""StickDeadzone"",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Pausa"",
+                    ""type"": ""Button"",
+                    ""id"": ""68728172-af43-4cbb-8cbd-7d73318ae845"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": ""StickDeadzone"",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -227,6 +235,28 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""action"": ""Acelerar"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1544a28b-fbc9-43cf-b9d9-3cbf3e6feeb3"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mando"",
+                    ""action"": ""Pausa"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b72f9d30-c8f9-4ac4-bc4f-589548669d64"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Teclado y raton"",
+                    ""action"": ""Pausa"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -267,6 +297,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_Jugador_Acelerar = m_Jugador.FindAction("Acelerar", throwIfNotFound: true);
         m_Jugador_Atacar = m_Jugador.FindAction("Atacar", throwIfNotFound: true);
         m_Jugador_Dash = m_Jugador.FindAction("Dash", throwIfNotFound: true);
+        m_Jugador_Pausa = m_Jugador.FindAction("Pausa", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -320,6 +351,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private readonly InputAction m_Jugador_Acelerar;
     private readonly InputAction m_Jugador_Atacar;
     private readonly InputAction m_Jugador_Dash;
+    private readonly InputAction m_Jugador_Pausa;
     public struct JugadorActions
     {
         private @InputMaster m_Wrapper;
@@ -328,6 +360,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         public InputAction @Acelerar => m_Wrapper.m_Jugador_Acelerar;
         public InputAction @Atacar => m_Wrapper.m_Jugador_Atacar;
         public InputAction @Dash => m_Wrapper.m_Jugador_Dash;
+        public InputAction @Pausa => m_Wrapper.m_Jugador_Pausa;
         public InputActionMap Get() { return m_Wrapper.m_Jugador; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -349,6 +382,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Dash.started -= m_Wrapper.m_JugadorActionsCallbackInterface.OnDash;
                 @Dash.performed -= m_Wrapper.m_JugadorActionsCallbackInterface.OnDash;
                 @Dash.canceled -= m_Wrapper.m_JugadorActionsCallbackInterface.OnDash;
+                @Pausa.started -= m_Wrapper.m_JugadorActionsCallbackInterface.OnPausa;
+                @Pausa.performed -= m_Wrapper.m_JugadorActionsCallbackInterface.OnPausa;
+                @Pausa.canceled -= m_Wrapper.m_JugadorActionsCallbackInterface.OnPausa;
             }
             m_Wrapper.m_JugadorActionsCallbackInterface = instance;
             if (instance != null)
@@ -365,6 +401,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Dash.started += instance.OnDash;
                 @Dash.performed += instance.OnDash;
                 @Dash.canceled += instance.OnDash;
+                @Pausa.started += instance.OnPausa;
+                @Pausa.performed += instance.OnPausa;
+                @Pausa.canceled += instance.OnPausa;
             }
         }
     }
@@ -393,5 +432,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
         void OnAcelerar(InputAction.CallbackContext context);
         void OnAtacar(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
+        void OnPausa(InputAction.CallbackContext context);
     }
 }

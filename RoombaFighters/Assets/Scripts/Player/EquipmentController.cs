@@ -35,11 +35,11 @@ public class EquipmentController : MonoBehaviour
         }
     }
     
-    
+    /*
 	public void Update(){
         if(this.powerUp==null && !isIA){
             this.GetComponent<ThirdPersonController>().boost = 1;
         }
     }
-    
+    */
 }

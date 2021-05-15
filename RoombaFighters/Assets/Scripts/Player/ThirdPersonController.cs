@@ -41,6 +41,8 @@ public class ThirdPersonController : MonoBehaviour
     public GameObject soundDash;
     public GameObject soundCube;
 
+    public MenuPausa pausa;
+
     public void OnAcelerar(InputValue context){
         vert = context.Get<float>();
     }
@@ -55,6 +57,13 @@ public class ThirdPersonController : MonoBehaviour
             Destroy(Instantiate(soundDash,new Vector3(0, 5, 0),Quaternion.identity),2f);
             StartCoroutine("DashCooldown");
         }
+    }
+
+    public void OnPausa(){
+        if(pausa.getEstadoPausa())
+            pausa.Reanudar();
+        else
+            pausa.Pausar();
     }
 
     private IEnumerator DashCooldown(){
@@ -77,6 +86,7 @@ public class ThirdPersonController : MonoBehaviour
     
     void FixedUpdate()
     {
+
         Girar();
         Acelerar();
     }
