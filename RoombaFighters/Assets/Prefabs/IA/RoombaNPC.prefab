@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 5759487999690943044}
   - component: {fileID: 5267709122230591832}
   - component: {fileID: 7178325493407042890}
+  - component: {fileID: 5156029766794810447}
   - component: {fileID: 7019643745805272279}
   - component: {fileID: 6607748494705779829}
-  - component: {fileID: 5156029766794810447}
   - component: {fileID: 5774719969792352953}
   - component: {fileID: 1978664900370662827}
   m_Layer: 0
@@ -163,6 +163,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!111 &5156029766794810447
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785838088220096811}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: a78df43307025a14aa4e51fbf4a0e949, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: a78df43307025a14aa4e51fbf4a0e949, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!114 &7019643745805272279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,7 +208,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  currentEnemyTarget: {fileID: 0}
+  currentTarget: {fileID: 0}
+  agent: {fileID: 5267709122230591832}
+  speed: 3
 --- !u!114 &6607748494705779829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,28 +227,12 @@ MonoBehaviour:
   viewAngle: 120
   targetMask:
     serializedVersion: 2
-    m_Bits: 448
+    m_Bits: 256
   obstacleMask:
     serializedVersion: 2
     m_Bits: 4
   visibleTargets: []
   delay: 0.5
---- !u!111 &5156029766794810447
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 785838088220096811}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: a78df43307025a14aa4e51fbf4a0e949, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: a78df43307025a14aa4e51fbf4a0e949, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!114 &5774719969792352953
 MonoBehaviour:
   m_ObjectHideFlags: 0

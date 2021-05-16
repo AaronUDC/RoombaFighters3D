@@ -13,6 +13,8 @@ public class WanderState : StateMachineBehaviour
     private NavMeshAgent agent;
     public GameObject gameObject;
 
+    private Vector3 newDestination;
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {  
@@ -20,7 +22,7 @@ public class WanderState : StateMachineBehaviour
         this.gameObject = animator.gameObject;
         
         targets = gameObject.GetComponent<RoombaNPCController>().targets;
-
+        GoNewPlace();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -28,15 +30,23 @@ public class WanderState : StateMachineBehaviour
         
         timer += Time.deltaTime;
         if (timer >= wanderTimer){
-            int i = Random.Range(0,targets.Length - 1);
-            Vector3 newPos = RandomNavSphere(targets[i].position, wanderRadius, -1);
-            agent.SetDestination(newPos);
+            GoNewPlace();
             timer = 0;
         }
         
+        //Si llega a su objetivo, vamos a otro sitio
+        if(Vector3.Distance(gameObject.transform.position, newDestination) < 0.2f){
+                GoNewPlace();
+                timer = 0;
+            }
 
     }
 
+    void GoNewPlace(){
+        int i = Random.Range(0,targets.Length - 1);
+        newDestination = RandomNavSphere(targets[i].position, wanderRadius, -1);
+        agent.SetDestination(newDestination);
+    }
     public static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask){
         Vector3 randDirection = Random.insideUnitSphere * dist;
  

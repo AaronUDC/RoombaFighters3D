@@ -32,5 +32,10 @@ public class MenuController : MonoBehaviour
     public void RestartLevel(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+
+    public void QuitGame(){
+        Application.Quit(1);
+    }
 }
 

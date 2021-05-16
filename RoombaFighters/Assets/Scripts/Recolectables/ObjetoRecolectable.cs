@@ -18,6 +18,9 @@ public class ObjetoRecolectable : MonoBehaviour
                 int i = Random.Range(0, powerUps.Length);
 			    col.GetComponent<EquipmentController>().ObtenerPowerUp(powerUps[i]);
             }
+
+            GetComponent<SphereCollider>().enabled = false;
+            Destroy(gameObject, 0.5f);
 		}
     }
 

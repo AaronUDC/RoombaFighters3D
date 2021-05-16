@@ -19,8 +19,10 @@ public class FieldOfViewEditor : Editor
         
         Handles.color = Color.red;
         foreach(Transform target in fow.visibleTargets){
-            Handles.DrawLine( fow.transform.position, target.position);
-            Handles.DrawLine( fow.transform.position, fow.transform.position + ((fow.transform.position - target.position).normalized * 5));
+            if(target != null){
+                Handles.DrawLine( fow.transform.position, target.position);
+                Handles.DrawLine( fow.transform.position, fow.transform.position + ((fow.transform.position - target.position).normalized * 5));
+            }
         }
     }
 }

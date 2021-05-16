@@ -49,11 +49,4 @@ public class GameDirector1J : MonoBehaviour
         }
     }
 
-    public void PausarJuego(){
-
-    }
-
-    public void ReanudarJuego(){
-
-    }
 }

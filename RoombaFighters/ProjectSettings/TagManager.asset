@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Options
   - Bot
+  - ItemBox
+  - Trash
   layers:
   - Default
   - TransparentFX

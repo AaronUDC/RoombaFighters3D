@@ -1,61 +1,55 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.AI;
 using UnityEngine;
-using UnityEditor;
+using UnityEngine.AI;
 
-public class RunAwayState : StateMachineBehaviour
-{   
-    public float refreshDestinationRate;
-    public float timer;
-    public Transform runAwayTarget;
+public class GetPowerUpState : StateMachineBehaviour
+{    
+    public float pickUpTimer;
+    private float timer;
+
     private NavMeshAgent agent;
     public GameObject gameObject;
 
-    public float targetDistance;
-
-    public Vector3 dirToTarget;
+    public Transform target;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+        override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {  
         this.agent = animator.gameObject.GetComponent<NavMeshAgent>();
         this.gameObject = animator.gameObject;
         
-        runAwayTarget = gameObject.GetComponent<RoombaNPCController>().currentTarget;
-
-        RunAway();
+        target = gameObject.GetComponent<RoombaNPCController>().currentTarget;
 
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
+    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex){
+
         timer += Time.deltaTime;
-        if (timer >= refreshDestinationRate){
-            RunAway();
+        if (timer >= pickUpTimer){
+            animator.SetTrigger("ItemObtained");
             timer = 0;
         }
-        
-        animator.SetFloat("TargetDistance", Vector3.Distance(gameObject.transform.position, runAwayTarget.position));
 
-    }
+        if (target != null){
+            agent.SetDestination(target.position);
 
-    private bool RunAway(){
-        dirToTarget = (gameObject.transform.position - runAwayTarget.position).normalized;
-        NavMeshHit navHit;
-        
-        NavMesh.SamplePosition (gameObject.transform.position + (dirToTarget * targetDistance), out navHit, 5 , -1);
-            
-        return agent.SetDestination(navHit.position);
+            if(Vector3.Distance(gameObject.transform.position, target.position) < 0.4f){
+                animator.SetTrigger("ItemObtained");
+            }
+
+        }else{
+            animator.SetTrigger("ItemObtained");
+        }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
+   // {   
+  
     //}
-
+    
     // OnStateMove is called right after Animator.OnAnimatorMove()
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     //{

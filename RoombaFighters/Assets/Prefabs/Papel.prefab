@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 526814528709324660}
   - component: {fileID: 4585595256482879694}
   - component: {fileID: 6810157177902316882}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Papel
-  m_TagString: Untagged
+  m_TagString: Trash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,7 +116,6 @@ MonoBehaviour:
   trashSize: 10
   randomSizeMinMax: {x: 10, y: 50}
   lifeTime: 30
-  collider: {fileID: 0}
 --- !u!135 &6810157177902316882
 SphereCollider:
   m_ObjectHideFlags: 0
