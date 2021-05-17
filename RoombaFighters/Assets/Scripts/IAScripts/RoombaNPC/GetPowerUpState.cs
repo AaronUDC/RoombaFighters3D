@@ -19,7 +19,7 @@ public class GetPowerUpState : StateMachineBehaviour
         this.agent = animator.gameObject.GetComponent<NavMeshAgent>();
         this.gameObject = animator.gameObject;
         
-        target = gameObject.GetComponent<RoombaNPCController>().currentTarget;
+        target = gameObject.GetComponent<RoombaNPCController>().currentRecolectableTarget;
 
     }
 

@@ -10,7 +10,8 @@ public class AtackCloseState : StateMachineBehaviour
 
     public Transform target;
 
-    public float minAtackDistance = 0.2f;
+    public float minAtackDistance = 0.7f;
+
 
     public float attackCooldown;
 
@@ -20,20 +21,18 @@ public class AtackCloseState : StateMachineBehaviour
         this.agent = animator.gameObject.GetComponent<NavMeshAgent>();
         this.gameObject = animator.gameObject;
         
-        target = gameObject.GetComponent<RoombaNPCController>().currentTarget;
+        target = gameObject.GetComponent<RoombaNPCController>().enemyTarget;
 
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex){
-
         if (target != null){
+
             //Vamos a por el jugador hasta estar suficientemente cerca, entonces le atacamos
             if(Vector3.Distance(gameObject.transform.position, target.position) < minAtackDistance){
                 gameObject.GetComponent<EquipmentController>().Atacar();
                 animator.SetTrigger("IAtacked");
-                
-                agent.speed = 1;
             }else{
                 agent.SetDestination(target.position);
             }

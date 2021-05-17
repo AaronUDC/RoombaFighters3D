@@ -37,7 +37,8 @@ public class FieldOfView : MonoBehaviour
                 float distToTarget = Vector3.Distance(target.position, transform.position);
 
                 if(!Physics.Raycast(transform.position, dirToTarget, distToTarget, obstacleMask)){
-                    visibleTargets.Add(target);
+                    if(target.gameObject != gameObject)
+                        visibleTargets.Add(target);
                 }  
             }
         }

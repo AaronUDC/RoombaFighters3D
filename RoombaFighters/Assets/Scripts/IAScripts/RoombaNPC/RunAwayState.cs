@@ -22,7 +22,7 @@ public class RunAwayState : StateMachineBehaviour
         this.agent = animator.gameObject.GetComponent<NavMeshAgent>();
         this.gameObject = animator.gameObject;
         
-        runAwayTarget = gameObject.GetComponent<RoombaNPCController>().currentTarget;
+        runAwayTarget = gameObject.GetComponent<RoombaNPCController>().enemyTarget;
 
         RunAway();
 

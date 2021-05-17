@@ -979,6 +979,7 @@ MonoBehaviour:
   dashCooldown: 2
   soundDash: {fileID: 4985120923029248855, guid: 5993fb63d6022ac4589a0badaba62125, type: 3}
   soundCube: {fileID: 4089156098820068119, guid: 71daac91039d16d4c9c1fc5595a4f265, type: 3}
+  pausa: {fileID: 0}
 --- !u!114 &6268930802958613218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1230,7 +1231,7 @@ MonoBehaviour:
   m_DistanceLimit: 0
   m_MinimumOcclusionTime: 0
   m_CameraRadius: 0.1
-  m_Strategy: 0
+  m_Strategy: 1
   m_MaximumEffort: 4
   m_SmoothingTime: 0
   m_Damping: 0
